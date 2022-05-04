@@ -5,6 +5,8 @@ import 'package:udemy_bmi_calculator/widgets/reusable_card_background.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:udemy_bmi_calculator/widgets/weight_age_card.dart';
 
+enum Gender { male, female, none }
+
 const Color activeTileColor = Color(0xFF1D1E33);
 const Color inactiveTileColor = Color(0xFF111328);
 const Color bottomButtonColor = Color(0xFFEB1555);
@@ -31,21 +33,7 @@ class InputPageState extends State<InputPage> {
   int age = 18;
   double bmi = 0.0;
 
-  void switchGenderCard(bool gender) {
-    setState(() {
-      if (gender) {
-        maleCardColor = activeCardColor;
-        maleBackgroundCardColor = activeTileColor;
-        femaleCardColor = inactiveCardColor;
-        femaleBackgroundCardColor = inactiveTileColor;
-      } else {
-        maleCardColor = inactiveCardColor;
-        maleBackgroundCardColor = inactiveTileColor;
-        femaleCardColor = activeCardColor;
-        femaleBackgroundCardColor = activeTileColor;
-      }
-    });
-  }
+  Gender myGender = Gender.none;
 
   void updateCard({required bool type, required bool operation}) {
     if (type) {
@@ -67,8 +55,8 @@ class InputPageState extends State<InputPage> {
     }
   }
 
-  String calculateBMI(){
-    bmi = weight / (height*height) * 10000;
+  String calculateBMI() {
+    bmi = weight / (height * height) * 10000;
     return bmi.toStringAsFixed(1);
   }
 
@@ -90,11 +78,17 @@ class InputPageState extends State<InputPage> {
                 // Choice of gender MALE
                 Expanded(
                   child: ReusableCardBackground(
-                    color: maleBackgroundCardColor,
+                    color: myGender == Gender.male
+                        ? activeTileColor
+                        : inactiveTileColor,
                     cardChild: TextButton(
-                      onPressed: () => switchGenderCard(true),
+                      onPressed: () => setState(() {
+                        myGender = Gender.male;
+                      }),
                       child: GenderCard(
-                        color: maleCardColor,
+                        color: myGender == Gender.male
+                            ? activeCardColor
+                            : inactiveCardColor,
                         gender: "HOMME",
                         genderIcon: FontAwesomeIcons.mars,
                       ),
@@ -104,11 +98,17 @@ class InputPageState extends State<InputPage> {
                 //Choice of gender FEMALE
                 Expanded(
                   child: ReusableCardBackground(
-                    color: femaleBackgroundCardColor,
+                    color: myGender == Gender.female
+                        ? activeTileColor
+                        : inactiveTileColor,
                     cardChild: TextButton(
-                      onPressed: () => switchGenderCard(false),
+                      onPressed: () => setState(() {
+                        myGender = Gender.female;
+                      }),
                       child: GenderCard(
-                        color: femaleCardColor,
+                        color: myGender == Gender.female
+                            ? activeCardColor
+                            : inactiveCardColor,
                         gender: "FEMME",
                         genderIcon: FontAwesomeIcons.venus,
                       ),
@@ -197,7 +197,9 @@ class InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          BottomButton(calculateBMI: calculateBMI,),
+          BottomButton(
+            calculateBMI: calculateBMI,
+          ),
         ],
       ),
     );
