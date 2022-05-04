@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GenderCard extends StatelessWidget {
   const GenderCard({
@@ -28,9 +27,9 @@ class GenderCard extends StatelessWidget {
         ),
         Text(
           gender,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 18.0,
-            color: color,
+            color: Colors.blueGrey,
           ),
         ),
       ],
