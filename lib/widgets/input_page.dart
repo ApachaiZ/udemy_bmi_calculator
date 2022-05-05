@@ -159,8 +159,8 @@ class InputPageState extends State<InputPage> {
                         onChanged: (newHeight) {
                           setState(() => height = newHeight);
                         },
-                        min: 050,
-                        max: 300,
+                        min: 120,
+                        max: 240,
                       ),
                     )
                   ],
