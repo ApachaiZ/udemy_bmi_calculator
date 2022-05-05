@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:udemy_bmi_calculator/constants.dart';
 import 'package:udemy_bmi_calculator/widgets/bottom_button.dart';
 import 'package:udemy_bmi_calculator/widgets/gender_card.dart';
 import 'package:udemy_bmi_calculator/widgets/reusable_card_background.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:udemy_bmi_calculator/widgets/weight_age_card.dart';
-
-enum Gender { male, female, none }
-
-const Color activeTileColor = Color(0xFF1D1E33);
-const Color inactiveTileColor = Color(0xFF111328);
-const Color bottomButtonColor = Color(0xFFEB1555);
-const Color activeCardColor = Colors.white;
-const Color inactiveCardColor = Colors.blueGrey;
-
-const Color inactiveCardBackgroundColor = Color(0xFF1D1E33);
 
 class InputPage extends StatefulWidget {
   const InputPage({Key? key}) : super(key: key);
@@ -23,11 +14,6 @@ class InputPage extends StatefulWidget {
 }
 
 class InputPageState extends State<InputPage> {
-  Color maleBackgroundCardColor = inactiveTileColor;
-  Color femaleBackgroundCardColor = inactiveTileColor;
-
-  Color maleCardColor = inactiveCardColor;
-  Color femaleCardColor = inactiveCardColor;
   double height = 150;
   int weight = 60;
   int age = 18;
@@ -132,10 +118,7 @@ class InputPageState extends State<InputPage> {
                   children: [
                     const Text(
                       "TAILLE",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
-                          color: Colors.blueGrey),
+                      style: labelText,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

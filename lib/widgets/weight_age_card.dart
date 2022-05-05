@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy_bmi_calculator/constants.dart';
 
 class WeightAgeCard extends StatefulWidget {
   const WeightAgeCard({
@@ -24,11 +25,7 @@ class WeightAgeCardState extends State<WeightAgeCard> {
       children: [
         Text(
           widget.type ? "POIDS" : "ÂGE",
-          style: const TextStyle(
-            color: Colors.blueGrey,
-            fontWeight: FontWeight.bold,
-            fontSize: 18.0,
-          ),
+          style: labelText,
         ),
         Text(
           "${widget.value}",

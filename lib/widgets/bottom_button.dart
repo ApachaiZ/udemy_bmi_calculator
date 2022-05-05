@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:udemy_bmi_calculator/widgets/input_page.dart';
+import 'package:udemy_bmi_calculator/constants.dart';
 
 class BottomButton extends StatelessWidget {
   const BottomButton({
@@ -32,7 +32,9 @@ class BottomButton extends StatelessWidget {
             ),
           ],
           context: context,
-          title: (double.parse(calculateBMI()) <= 25) ? ("Vous avez une corpulence normale") : ("Vous êtes en surpoids"),
+          title: (double.parse(calculateBMI()) <= 25)
+              ? ("Vous avez une corpulence normale")
+              : ("Vous êtes en surpoids"),
           desc: "Votre IMC est de ${calculateBMI()}",
         ).show();
       },

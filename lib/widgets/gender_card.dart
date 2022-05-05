@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy_bmi_calculator/constants.dart';
 
 class GenderCard extends StatelessWidget {
   const GenderCard({
@@ -27,10 +28,7 @@ class GenderCard extends StatelessWidget {
         ),
         Text(
           gender,
-          style: const TextStyle(
-            fontSize: 18.0,
-            color: Colors.blueGrey,
-          ),
+          style: labelText,
         ),
       ],
     );
