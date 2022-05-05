@@ -6,8 +6,6 @@ const Color bottomButtonColor = Color(0xFFEB1555);
 const Color activeCardColor = Colors.white;
 const Color inactiveCardColor = Colors.blueGrey;
 
-const Color inactiveCardBackgroundColor = Color(0xFF1D1E33);
-
 const labelText = TextStyle(
     fontWeight: FontWeight.bold,
     fontSize: 20.0,
