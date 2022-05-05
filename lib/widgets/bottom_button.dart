@@ -40,7 +40,7 @@ class BottomButton extends StatelessWidget {
       },
       child: Container(
         decoration: const BoxDecoration(
-          color: bottomButtonColor,
+          color: kBottomButtonColor,
         ),
         width: double.infinity,
         height: 80.0,

@@ -19,7 +19,7 @@ class InputPageState extends State<InputPage> {
   int age = 18;
   double bmi = 0.0;
 
-  Gender myGender = Gender.none;
+  KGender myGender = KGender.none;
 
   void updateCard({required bool type, required bool operation}) {
     if (type) {
@@ -64,17 +64,17 @@ class InputPageState extends State<InputPage> {
                 // Choice of gender MALE
                 Expanded(
                   child: ReusableCardBackground(
-                    color: myGender == Gender.male
-                        ? activeTileColor
-                        : inactiveTileColor,
+                    color: myGender == KGender.male
+                        ? kActiveTileColor
+                        : kInactiveTileColor,
                     cardChild: TextButton(
                       onPressed: () => setState(() {
-                        myGender = Gender.male;
+                        myGender = KGender.male;
                       }),
                       child: GenderCard(
-                        color: myGender == Gender.male
-                            ? activeCardColor
-                            : inactiveCardColor,
+                        color: myGender == KGender.male
+                            ? kActiveCardColor
+                            : kInactiveCardColor,
                         gender: "HOMME",
                         genderIcon: FontAwesomeIcons.mars,
                       ),
@@ -84,17 +84,17 @@ class InputPageState extends State<InputPage> {
                 //Choice of gender FEMALE
                 Expanded(
                   child: ReusableCardBackground(
-                    color: myGender == Gender.female
-                        ? activeTileColor
-                        : inactiveTileColor,
+                    color: myGender == KGender.female
+                        ? kActiveTileColor
+                        : kInactiveTileColor,
                     cardChild: TextButton(
                       onPressed: () => setState(() {
-                        myGender = Gender.female;
+                        myGender = KGender.female;
                       }),
                       child: GenderCard(
-                        color: myGender == Gender.female
-                            ? activeCardColor
-                            : inactiveCardColor,
+                        color: myGender == KGender.female
+                            ? kActiveCardColor
+                            : kInactiveCardColor,
                         gender: "FEMME",
                         genderIcon: FontAwesomeIcons.venus,
                       ),
@@ -110,7 +110,7 @@ class InputPageState extends State<InputPage> {
             child: Container(
               margin: const EdgeInsets.all(10.0),
               decoration: BoxDecoration(
-                  color: activeTileColor,
+                  color: kActiveTileColor,
                   borderRadius: BorderRadius.circular(10.0)),
               child: Center(
                 child: Column(
@@ -118,14 +118,14 @@ class InputPageState extends State<InputPage> {
                   children: [
                     const Text(
                       "TAILLE",
-                      style: labelText,
+                      style: kLabelText,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           "${height.toInt()}",
-                          style: valueText,
+                          style: kValueText,
                         ),
                         const Text(
                           "cm",
@@ -158,7 +158,7 @@ class InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusableCardBackground(
-                    color: activeTileColor,
+                    color: kActiveTileColor,
                     cardChild: WeightAgeCard(
                       type: true,
                       updateCard: updateCard,
@@ -168,7 +168,7 @@ class InputPageState extends State<InputPage> {
                 ),
                 Expanded(
                   child: ReusableCardBackground(
-                    color: activeTileColor,
+                    color: kActiveTileColor,
                     cardChild: WeightAgeCard(
                       type: false,
                       updateCard: updateCard,

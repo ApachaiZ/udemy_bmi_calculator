@@ -25,11 +25,11 @@ class WeightAgeCardState extends State<WeightAgeCard> {
       children: [
         Text(
           widget.type ? " POIDS" : "ÂGE",
-          style: labelText,
+          style: kLabelText,
         ),
         Text(
           "${widget.value}",
-          style:valueText,
+          style: kValueText,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
