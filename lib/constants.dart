@@ -6,9 +6,16 @@ const Color bottomButtonColor = Color(0xFFEB1555);
 const Color activeCardColor = Colors.white;
 const Color inactiveCardColor = Colors.blueGrey;
 
+const valueText = TextStyle(
+  color: Colors.white,
+  fontSize: 50,
+  fontWeight: FontWeight.bold,
+);
+
 const labelText = TextStyle(
-    fontWeight: FontWeight.bold,
-    fontSize: 20.0,
-    color: Colors.blueGrey);
+  fontWeight: FontWeight.bold,
+  fontSize: 20.0,
+  color: Colors.blueGrey,
+);
 
 enum Gender { male, female, none }

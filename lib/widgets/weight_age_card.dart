@@ -24,15 +24,12 @@ class WeightAgeCardState extends State<WeightAgeCard> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          widget.type ? "POIDS" : "ÂGE",
+          widget.type ? " POIDS" : "ÂGE",
           style: labelText,
         ),
         Text(
           "${widget.value}",
-          style: const TextStyle(
-            fontSize: 50,
-            fontWeight: FontWeight.bold,
-          ),
+          style:valueText,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

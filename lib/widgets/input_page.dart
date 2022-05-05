@@ -125,8 +125,7 @@ class InputPageState extends State<InputPage> {
                       children: [
                         Text(
                           "${height.toInt()}",
-                          style: const TextStyle(
-                              fontSize: 40.0, fontWeight: FontWeight.bold),
+                          style: valueText,
                         ),
                         const Text(
                           "cm",
