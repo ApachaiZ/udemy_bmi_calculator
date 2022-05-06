@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:udemy_bmi_calculator/constants.dart';
+import 'package:udemy_bmi_calculator/widgets/weight_age_custom_button.dart';
 
 class WeightAgeCard extends StatefulWidget {
   const WeightAgeCard({
@@ -34,35 +35,20 @@ class WeightAgeCardState extends State<WeightAgeCard> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all((Colors.white10)),
-                shape: MaterialStateProperty.all(
-                  const CircleBorder(
-                    side: BorderSide(color: Colors.black26),
-                  ),
-                ),
-              ),
-              onPressed: () => widget.updateCard(
-                type: widget.type,
-                operation: false,
-              ),
-              child: const Icon(Icons.remove),
+            WeightAgeCustomButton(
+              updateCard: widget.updateCard,
+              type: widget.type,
+              operation: false,
+              icon: const Icon(Icons.remove),
             ),
-            ElevatedButton(
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all((Colors.white10)),
-                shape: MaterialStateProperty.all(
-                  const CircleBorder(
-                    side: BorderSide(color: Colors.black26),
-                  ),
-                ),
-              ),
-              onPressed: () => widget.updateCard(
-                type: widget.type,
-                operation: true,
-              ),
-              child: const Icon(Icons.add),
+            const SizedBox(
+              width: 10.0,
+            ),
+            WeightAgeCustomButton(
+              updateCard: widget.updateCard,
+              type: widget.type,
+              operation: true,
+              icon: const Icon(Icons.add),
             ),
           ],
         )

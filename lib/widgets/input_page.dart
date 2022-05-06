@@ -122,6 +122,8 @@ class InputPageState extends State<InputPage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
                       children: [
                         Text(
                           "${height.toInt()}",
@@ -136,7 +138,8 @@ class InputPageState extends State<InputPage> {
                     ),
                     Center(
                       child: Slider(
-                        activeColor: Colors.red,
+                        activeColor: kBottomButtonColor,
+                        inactiveColor: kInactiveTileColor,
                         value: height,
                         onChanged: (newHeight) {
                           setState(() => height = newHeight);
